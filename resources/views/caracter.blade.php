@@ -1,21 +1,26 @@
-<table>
+
+  <table>
     <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Estado</th>
-            <th>Especie</th>
-            <th>Género</th>
-        </tr>
+      <tr>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Especie</th>
+        <th>Género</th>
+      </tr>
     </thead>
     <tbody>
-        @foreach ($characters as $caracter)
+      @foreach ($characters as $character)
         <tr>
-            <td>{{ $caracter->name }}</td>
-            <td>{{ $caracter->status }}</td>
-            <td>{{ $caracter->species }}</td>
-            <td>{{ $caracter->gender }}</td>
+          <td>{{ $character->name }}</td>
+          <td>{{ $character->status }}</td>
+          <td>{{ $character->species }}</td>
+          <td>{{ $character->gender }}</td>
         </tr>
-        @endforeach
+      @endforeach
     </tbody>
-</table>
+  </table>
+
+  
+
+
 

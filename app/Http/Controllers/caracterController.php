@@ -13,6 +13,7 @@ class caracterController extends Controller
     $response = $client->request('GET', $API);
     $character = json_decode($response->getBody());
         return view("caracter", [ "characters" => $character->results]);
+        dd($character);
   }  
 
   public function getCaracterById($id){
