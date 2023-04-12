@@ -9,7 +9,7 @@ Route::get('/caracter', function () {
 // Ruta con metodo get trae todos los personajes
 Route::get('/caracters', [caracterController::class, 'getCaracter']);
 
-//Busca personaje por id
+//Ruta por metodo Get busca personaje por id
 Route::get('/caracter/{id}', [caracterController::class, 'getCaracterById']);
 
 
