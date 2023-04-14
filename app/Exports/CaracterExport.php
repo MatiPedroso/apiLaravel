@@ -7,17 +7,17 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 
 class CaracterExport implements FromCollection
 {
-    protected $personajes;
+    protected $Data;
 
-    public function __construct(array $personajes)
+    public function __construct(array $Data)
     {
-        $this->personajes = $personajes;
+        $this->data = $Data;
     }
 
     public function collection()
     {
-        // dd(collect($this->personajes));
-        return collect($this->personajes);
+        
+        return collect($this->data);
     }
 }
 

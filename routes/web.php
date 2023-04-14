@@ -1,16 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\caracterController;
+use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\EpisodeController;
 
-Route::get('/caracter', function () {
-    return view('caracter');
-});
-// Ruta con metodo get trae todos los personajes
-Route::get('/caracters', [caracterController::class, 'getCaracter']);
+// home
+Route::view('/', 'index')->name('home.index');
 
-//Ruta por metodo Get busca personaje por id
-Route::get('/caracter/{id}', [caracterController::class, 'getCaracterById']);
+// Characters
+Route::get('/characters', [CharacterController::class, 'getCaracter'])->name('characters.all');
+Route::get('/characters/{id}', [CharacterController::class, 'getCaracterById'])->name('character.show');
+Route::get('/filterCharacter', [CharacterController::class, 'filterCharacters'])->name('characters.filter');
+
+//Episodes
+Route::get('/episodes', [EpisodeController::class, 'getAllEpisodes'])->name('episodes.all');
+Route::get('/episodes/{id}', [EpisodeController::class,'getEpisodeById'])->name('episode.show');
+Route::get('/filterEpisode', [EpisodeController::class,'filterEpisode'])->name('episodes.filter');
 
 // Ruta para exportar a Excel
-Route::get('/downloadFile', [CaracterController::class, 'downloadExcel'])->name ('download.excel');
+Route::get('/downloadFile', [CharacterController::class, 'downloadExcel'])->name ('download.excel');
